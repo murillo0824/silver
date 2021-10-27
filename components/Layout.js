@@ -17,12 +17,14 @@ export default function Layout({ title = "none title", nowpage, children }) {
         <div className={styles.titlecont}>
           <div className={styles.logocont}>
             <Link href="/">
+              <>
               <Image
                 src="/image/logo_mark.png"
                 width={181}
                 height={198}
                 className={styles.logo}
               />
+              </>
             </Link>
           </div>
           <Link href="/">
@@ -37,19 +39,22 @@ export default function Layout({ title = "none title", nowpage, children }) {
           <ul className={styles.golobal_nav__list}>
             <li className={nowpage == 1 ? styles.isSelected : null}>
               <Link href="/">
+                
                 <a>
                   <AiFillHome /> Home
                 </a>
+                
               </Link>
             </li>
             <li className={nowpage == 2 ? styles.isSelected : null}>
-              <Link href="/">
-                <a><RiGalleryFill/> Gallery</a>
+              <Link href="/gallery-page">
+              <a><RiGalleryFill/> Gallery</a>
               </Link>
             </li>
             <li className={nowpage == 3 ? styles.isSelected : null}>
-              <Link href="/">
-                <a><IoMdContact />Contact</a>
+              <Link href="/contact">
+              <a><IoMdContact />Contact</a>
+
               </Link>
             </li>
           </ul>
