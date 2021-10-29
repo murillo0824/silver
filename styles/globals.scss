@@ -15,6 +15,9 @@ body {
   @include mq(md){
     font-size: 14px;
   }
+  @include mq(sm){
+    font-size: 12px;
+  }
 }
 
 a {
@@ -34,4 +37,9 @@ header {
   min-height: 20px;
   box-sizing: border-box;
   
+}
+main {
+  @include mq(md){
+    margin-bottom: 55px;
+  }
 }
