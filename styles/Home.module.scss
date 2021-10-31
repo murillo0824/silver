@@ -1,4 +1,7 @@
-@import "colors.scss";
+@use "./common/colors";
+@use "./common/breakpoint";
+@use  "./common/mixin";
+@use "./common/common";
 
 .container {
   min-height: 100vh;

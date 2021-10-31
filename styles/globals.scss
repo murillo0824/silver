@@ -1,9 +1,10 @@
-@import "colors.scss";
+@use "./common/colors";
+@use "./common/breakpoint";
+@use  "./common/mixin";
+@use "./common/common";
 
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Zen+Kurenaido&display=swap');
-@import "_breakpoint.scss";
-@import "_mixin.scss";
-@import "_common.scss";
+
 
 
 html,
@@ -12,15 +13,15 @@ body {
   margin: 0;
   
   min-width: 300px;
-  @include mq(md){
+  @include mixin.mq(md){
     font-size: 14px;
   }
-  @include mq(sm){
+  @include mixin.mq(sm){
     font-size: 12px;
   }
 }
 
-a {
+a { 
   color: inherit;
   text-decoration: none;
 }
@@ -30,8 +31,8 @@ a {
 }
 header {
   font-family: 'Zen Kurenaido', sans-serif;
-  background-color: $theme;
-  color: $white;
+  background-color: colors.$theme;
+  color: colors.$white;
   display: flex;
   align-items: center;
   min-height: 20px;
@@ -39,7 +40,7 @@ header {
   
 }
 main {
-  @include mq(md){
+  @include mixin.mq(md){
     margin-bottom: 55px;
   }
 }
