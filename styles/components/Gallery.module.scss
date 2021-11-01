@@ -1,0 +1,41 @@
+@use "../common/colors";
+@use "../common/breakpoint";
+@use  "../common/mixin";
+@use "../common/common";
+
+
+.gallerymenu{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px colors.$shadowGrey;
+  &__label{
+    width: 100%;
+    position: relative;
+    padding-bottom: 75%;
+    overflow: hidden;
+    &__before{
+      position: absolute;
+      top:0;
+      left: 0;;
+    }
+    &__after{
+      position: absolute;
+      top:0;
+      left: 0;;
+    }
+    &__before,&__after{
+      & img{
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    
+  }
+
+  &__caption{
+    word-break: break-all;
+  }
+
+}

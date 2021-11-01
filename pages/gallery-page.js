@@ -1,8 +1,8 @@
 import useSWR from "swr";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-
+import Gallerymenu from "../components/ui/GalleryMenu";
+import styles from "../styles/Gallerypage.module.scss";
 
 const NEXT_PUBLIC_MCCMS_API_ENDPOIN = process.env.NEXT_PUBLIC_MCCMS_API_ENDPOIN;
 
@@ -17,7 +17,7 @@ export default function GelleryPage() {
     data: blogData,
     error,
     mutate,
-  } = useSWR(`${NEXT_PUBLIC_MCCMS_API_ENDPOIN}blog`, fetcher);
+  } = useSWR(`${NEXT_PUBLIC_MCCMS_API_ENDPOIN}fotogarally`, fetcher);
   useEffect(() => {
     mutate();
   }, []);
@@ -36,20 +36,21 @@ export default function GelleryPage() {
 
   return (
     <div>
-      {blogData.contents &&
-        blogData.contents.map((item) => <div key={item.id}>{item.title}</div>)}
-
+      <div className={styles.galleryCont}>
+        {blogData.contents &&
+          blogData.contents.map((item) => (
+            <Gallerymenu gallery={item} key={item.id} />
+          ))}
+      </div>
     </div>
   );
 }
 
-
-export async function getStaticProps(){
-
+export async function getStaticProps() {
   return {
-    props:{
-      title:"Gallery",
-      nowpage:2,
-    }
-  }
+    props: {
+      title: "Gallery",
+      nowpage: 2,
+    },
+  };
 }

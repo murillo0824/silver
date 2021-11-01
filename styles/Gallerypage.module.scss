@@ -1,0 +1,14 @@
+@use "./common/colors";
+@use "./common/breakpoint";
+@use  "./common/mixin";
+@use "./common/common";
+
+.galleryCont{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  max-width: 1200px;
+  margin:0 auto;
+  column-gap: 50px;
+  box-sizing: border-box;
+  padding: 20px;
+}
