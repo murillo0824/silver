@@ -1,41 +1,76 @@
 @use "../common/colors";
 @use "../common/breakpoint";
-@use  "../common/mixin";
+@use "../common/mixin";
 @use "../common/common";
 
-
-.gallerymenu{
+.gallerymenu {
   width: 100%;
   box-sizing: border-box;
-  padding: 5px;
+  border-radius: 10px;
   cursor: pointer;
-  box-shadow: 5px 5px 5px colors.$shadowGrey;
-  &__label{
+  box-shadow: 5px 5px 15px colors.$shadowGrey;
+  transition: 0.5s ease-out;
+
+  // border: 1px colors.$shadowGrey solid;
+  z-index: 1;
+  &__label {
+    border-radius: 10px 10px 0 0;
+
     width: 100%;
     position: relative;
-    padding-bottom: 75%;
+    padding-bottom: 74%;
     overflow: hidden;
-    &__before{
+
+    &__before {
       position: absolute;
-      top:0;
-      left: 0;;
+      top: 0;
+      left: 0;
     }
-    &__after{
+    &__after {
       position: absolute;
-      top:0;
-      left: 0;;
+      top: 0;
+      left: 0;
+      transform: translate(101%, 0);
     }
-    &__before,&__after{
-      & img{
+    &__before,
+    &__after {
+      & img {
         width: 100%;
         object-fit: cover;
       }
+      transition: common.$basic_trans;
     }
+  }
+
+  &__caption {
+    padding: 5px;
+
+    &__title {
+      font-weight: 800;
+      font-size: 120%;
+      color: colors.$themeDark;
+      letter-spacing: -1;
+    }
+    &__date {
+      color: colors.$grey;
+    }
+  }
+
+  &:hover {
+    background-color: colors.$themeDark;
     
-  }
+    & .gallerymenu__label__after {
+      transform: translate(0, 0);
+    }
+    & .gallerymenu__label__before {
+      transform: translate(-100%, 0);
+    }
 
-  &__caption{
-    word-break: break-all;
+    & .gallerymenu__caption__title{
+      color: colors.$white;
+    }
+    & .gallerymenu__caption__date{
+      color: colors.$liteGrey;
+    }
   }
-
 }

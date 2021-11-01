@@ -3,6 +3,7 @@ import { useState, useContext } from "react";
 import styles from "../../styles/components/Gallery.module.scss";
 import Image from "next/image";
 
+
 export default function Gallerymenu({ gallery }) {
   return (
     <>

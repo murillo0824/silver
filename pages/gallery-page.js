@@ -4,6 +4,7 @@ import axios from "axios";
 import Gallerymenu from "../components/ui/GalleryMenu";
 import styles from "../styles/Gallerypage.module.scss";
 
+
 const NEXT_PUBLIC_MCCMS_API_ENDPOIN = process.env.NEXT_PUBLIC_MCCMS_API_ENDPOIN;
 
 const NEXT_PUBLIC_API_KEY = process.env.NEXT_PUBLIC_MCCMS_API_KEY;
@@ -39,6 +40,7 @@ export default function GelleryPage() {
       <div className={styles.galleryCont}>
         {blogData.contents &&
           blogData.contents.map((item) => (
+            
             <Gallerymenu gallery={item} key={item.id} />
           ))}
       </div>
