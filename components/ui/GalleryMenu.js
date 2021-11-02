@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function Gallerymenu({ gallery }) {
   return (
     <>
-      <Link href="/gallery-page">
+      <Link href={`/gallery/${gallery.id}`}>
         <div className={styles.gallerymenu}>
           <div className={styles.gallerymenu__label}>
             <div className={styles.gallerymenu__label__before}>
