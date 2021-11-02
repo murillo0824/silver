@@ -19,6 +19,7 @@ body {
   @include mixin.mq(sm){
     font-size: 12px;
   }
+  background-color: colors.$bgCream;
 }
 
 a { 
@@ -40,6 +41,7 @@ header {
   
 }
 main {
+  height: calc(100vh -  65px);
   @include mixin.mq(md){
     margin-bottom: 55px;
   }

@@ -10,6 +10,7 @@
   cursor: pointer;
   box-shadow: 5px 5px 15px colors.$shadowGrey;
   transition: 0.5s ease-out;
+  background: linear-gradient(colors.$themeLite , colors.$white);
 
   // border: 1px colors.$shadowGrey solid;
   z-index: 1;
@@ -44,7 +45,8 @@
 
   &__caption {
     padding: 5px;
-
+    border-top:2px solid colors.$black;
+    
     &__title {
       font-weight: 800;
       font-size: 120%;
@@ -58,6 +60,7 @@
 
   &:hover {
     background-color: colors.$themeDark;
+    background: colors.$themeDark;
     
     & .gallerymenu__label__after {
       transform: translate(0, 0);
