@@ -8,9 +8,9 @@
   box-sizing: border-box;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 5px 5px 15px colors.$shadowGrey;
+  box-shadow: 5px 5px 20px colors.$shadowGrey;
   transition: 0.5s ease-out;
-  background: linear-gradient(colors.$themeLite , colors.$white);
+  background: linear-gradient(300deg,colors.$themeLite , colors.$white);
 
   // border: 1px colors.$shadowGrey solid;
   z-index: 1;
