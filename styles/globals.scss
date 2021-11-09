@@ -40,9 +40,24 @@ header {
   box-sizing: border-box;
   
 }
+
+h3{
+  color: colors.$shadowGrey;
+  
+}
+
 main {
+  
   height: calc(100vh -  65px);
   @include mixin.mq(md){
     margin-bottom: 55px;
   }
+}
+
+.center-conteiner{
+  margin: 0 auto;
+  max-width: 1200px;
+  box-sizing: border-box;
+  padding: 0 10px;
+
 }

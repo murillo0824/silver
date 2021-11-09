@@ -1,41 +1,36 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { getPostData,getAllIds } from "../../lib/gallery";
+import { getPostData, getAllIds } from "../../lib/gallery";
 
-
-export default function GalleryDetail({post}){
-  
+export default function GalleryDetail({ post }) {
   const router = useRouter();
-  if(router.isFallback || !post){
-    return <div>loading ....</div>
+  if (router.isFallback || !post) {
+    return <div>loading ....</div>;
   }
 
-
-  return(
+  return (
     <>
-      <h3>
-        {post.title}
-      </h3>
+      <div className="center-conteiner">
+        <h3>{post.title}</h3>
+      </div>
     </>
-  )
+  );
 }
 
-
-export async function getStaticPaths(){
+export async function getStaticPaths() {
   const paths = await getAllIds();
-  return{
+  return {
     paths,
-    fallback:true
+    fallback: true,
   };
-
 }
 
-export async function getStaticProps({ params }){
-  const { post:post } = await getPostData(params.id);
+export async function getStaticProps({ params }) {
+  const { post: post } = await getPostData(params.id);
   return {
-    props:{
+    props: {
       post,
     },
-    revalidate:5,
+    revalidate: 5,
   };
 }
