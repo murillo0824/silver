@@ -15,6 +15,7 @@
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
     "react-loading": "^2.0.3",
+    "react-spring": "^9.3.0",
     "sass": "^1.43.3",
     "scrollreveal": "^4.0.9",
     "swr": "^1.0.1"
